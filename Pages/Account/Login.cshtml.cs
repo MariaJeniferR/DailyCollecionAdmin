@@ -139,7 +139,7 @@ namespace DailyCashCollection.Pages.Account
                         if (BCrypt.Net.BCrypt.Verify(Password, storedHashedPassword))
                         {
                             SuccessMessage = "Login successful!";
-                            return RedirectToPage("/Dashboard"); // Make sure the path is correct
+                            return RedirectToPage("/Account/Dashboard"); // Make sure the path is correct
                         }
                         else
                         {

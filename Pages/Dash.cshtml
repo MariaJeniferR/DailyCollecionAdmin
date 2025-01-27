@@ -1,0 +1,22 @@
+﻿@page
+@model DailyCashCollection.Pages.DashModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Dashboard</h2>
+<h2>Dashboard</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">No. of Users</h6>
+            </div>
+            <div class="card-body">
+                <h4 class="font-weight-bold">@Model.NumberOfUsers</h4>
+            </div>
+        </div>
+    </div>
+</div>

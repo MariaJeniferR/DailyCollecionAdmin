@@ -1,0 +1,108 @@
+﻿@page
+@model CreateUserModel
+
+<body>
+    <div class="container">
+        <div class="login-container" style="max-width: 400px; margin: 20px auto;">
+            <div class="card p-4">
+                <h1 class="text-center mb-4">Create User</h1>
+
+                <!-- Display error or success message -->
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <div style="color: red; font-size: 0.9rem; margin-bottom: 1rem;">
+                        @Model.ErrorMessage
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+                {
+                    <div style="color: green; font-size: 0.9rem; margin-bottom: 1rem;">
+                        @Model.SuccessMessage
+                    </div>
+                }
+
+                <form method="post">
+                    <div class="form-group mb-3">
+                        <input type="text" name="Username" class="form-control form-control-sm" placeholder="Enter username" maxlength="20" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="PhoneNo" class="form-control form-control-sm" placeholder="Enter phone number" maxlength="10" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="CompanyName" class="form-control form-control-sm" placeholder="Enter company name" maxlength="100" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" name="Password" class="form-control form-control-sm" placeholder="Enter password" maxlength="6" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" name="ConfirmPassword" class="form-control form-control-sm" placeholder="Confirm password" maxlength="6" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary w-100">Create User</button>
+                    </div>
+                </form>
+
+                <div class="register-link text-center mt-3">
+                    <a href="@Url.Page("/Users")" class="btn btn-secondary btn-sm">Back to Users</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+  @*                   @page
+@model CreateUserModel
+@{
+    ViewData["Title"] = "CreateUser";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<h2>CreateUser</h2>
+<body>
+   
+    <div class="container">
+        <div class="login-container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="card p-4" style="width: 400px; border-radius: 8px;">
+                
+
+                <!-- Display error or success message -->
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <div style="color: red; font-size: 0.9rem; margin-top: 1rem;">
+                        @Model.ErrorMessage
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+                {
+                    <div style="color: green; font-size: 0.9rem; margin-bottom: 1rem;">
+                        @Model.SuccessMessage
+                    </div>
+                }
+
+                <form method="post">
+                    <div class="form-group mb-3">
+                        <input type="text" name="Username" class="form-control form-control-sm" placeholder="Enter username" maxlength="20" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="PhoneNo" class="form-control form-control-sm" placeholder="Enter phone number" maxlength="10" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="CompanyName" class="form-control form-control-sm" placeholder="Enter company name" maxlength="100" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" name="Password" class="form-control form-control-sm" placeholder="Enter password" maxlength="6" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" name="ConfirmPassword" class="form-control form-control-sm" placeholder="Confirm password" maxlength="6" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary w-100">Create User</button>
+                    </div>
+                </form>
+
+                <div class="register-link text-center mt-3">
+                    <a href="@Url.Page("/Users")" class="btn btn-secondary btn-sm">Back to Users</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body *@>

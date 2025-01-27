@@ -1,5 +1,3 @@
-
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,13 +5,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DailyCashCollection.Pages.Account
+namespace DailyCashCollecion.Pages
 {
-    public class RegisterModel : PageModel
+    public class CreateUserModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public RegisterModel(ApplicationDbContext context)
+        public CreateUserModel(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -86,7 +84,7 @@ namespace DailyCashCollection.Pages.Account
         //    return RedirectToPage("/Account/Login");
         //}
 
-     
+
         public async Task<IActionResult> OnPostAsync()
         {
             // Check if Password and ConfirmPassword match
@@ -95,6 +93,14 @@ namespace DailyCashCollection.Pages.Account
                 ErrorMessage = "Password and Confirm Password do not match.";
                 return Page();
             }
+
+            //// Check if the username is already registered
+            //var existingUserByUsername = _context.Owner.FirstOrDefault(u => u.Username == Username);
+            //if (existingUserByUsername != null)
+            //{
+            //    ErrorMessage = "This username is already taken.";
+            //    return Page();
+            //}
 
             // Validate if the phone number already exists in the database
             var existingUser = _context.Owner.FirstOrDefault(u => u.PhoneNo == PhoneNo);
